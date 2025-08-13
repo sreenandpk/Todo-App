@@ -173,26 +173,38 @@ function App() {
 
   </div>
 
-  <div
-    className="col-12 col-md-6"
-    style={{ display: "flex", gap: "1rem", alignItems: "center" }}
-  >
-    <DatePicker
-      selected={date}
-      onChange={(d) => setDate(d)}
-      placeholderText="Select a date"
-      dateFormat="dd-MM-yyyy"
-      className="form-control"
-      style={{
-        height: "calc(2em + 2rem + 1px)",
-        padding: "12px 16px",
-        fontSize: "1.25rem",
-        boxSizing: "border-box",
-        flex: 1,
-        zIndex:'1000',
-       
-      }}
-    />
+<div
+  className="col-12 col-md-6"
+  style={{ display: "flex", gap: "1rem", alignItems: "center", position: "relative" }}
+>
+  <DatePicker
+    selected={date}
+    onChange={(d) => setDate(d)}
+    placeholderText="Select a date"
+    dateFormat="dd-MM-yyyy"
+    className="form-control"
+    popperPlacement="bottom-start"
+    popperModifiers={[
+      {
+        name: "preventOverflow",
+        options: {
+          boundary: "viewport",
+        },
+      },
+    ]}
+    popperProps={{
+      style: { zIndex: 2000 },
+    }}
+    style={{
+      height: "calc(2em + 2rem + 1px)",
+      padding: "12px 16px",
+      fontSize: "1.25rem",
+      boxSizing: "border-box",
+      flex: 1,
+      zIndex: 1000,
+    }}
+  />
+
 
 <button
       className="btn rounded-3 shadow-sm"

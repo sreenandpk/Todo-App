@@ -282,8 +282,8 @@ function IsPastDate(taskDate) {
             style={{
            fontFamily: "'Roboto', sans-serif",
     fontSize: "1.20rem",
-    fontWeight: 600,
-    color: items.completed ? "gray" : "#292121",
+    fontWeight: 'bold',
+    color: items.completed ? "gray" : "#413a3aff",
     textDecoration: items.completed ? "line-through" : "none", 
     marginBottom: "6px",
     wordBreak: "break-word" 

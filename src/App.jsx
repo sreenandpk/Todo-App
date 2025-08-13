@@ -12,12 +12,17 @@ function App() {
   const [backupArr, setBackupArr] = useState([]);
   const [display,setDisplay]=useState("none")
  const [Message,setMessage]=useState("");
+ 
+function IsPastDate(taskDate) {
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0); // today at midnight
 
-  function IsPastDate(taskDate) {
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
-    return new Date(taskDate) < currentDate;
-  }
+  const task = new Date(taskDate);
+  task.setHours(0, 0, 0, 0); // also set task to local midnight
+
+  return task < currentDate;
+}
+
 
   
   useEffect(() => {
@@ -64,7 +69,9 @@ function App() {
    
 
   
-    const formattedDate = date.toISOString().split("T")[0];
+   const formattedDate = date.toLocaleDateString("en-CA"); 
+
+
     const newTaskAndDate = { text, date: formattedDate, completed: false };
 
     const newSortedTaskAndDate = [newTaskAndDate, ...textArr].sort(

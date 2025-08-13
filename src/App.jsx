@@ -280,16 +280,13 @@ function IsPastDate(taskDate) {
           <p
             className={`mb-1 text-break`}
             style={{
-              color: items.completed
-                ? "gray"
-                : IsPastDate(items.date)
-                ? "#dc3545"
-                : "#292121ff",
-              textDecoration: items.completed ? "line-through" : "none",
-              fontWeight: 600,
-              fontSize: "1.15rem",
-              marginBottom: "6px",
-   
+           fontFamily: "'Roboto', sans-serif",
+    fontSize: "1.20rem",
+    fontWeight: 600,
+    color: items.completed ? "gray" : "#292121",
+    textDecoration: items.completed ? "line-through" : "none", 
+    marginBottom: "6px",
+    wordBreak: "break-word" 
               
             }}
           >
@@ -303,7 +300,7 @@ function IsPastDate(taskDate) {
                 ? "#dc3545"
                 : "#198754",
               fontWeight: 600,
-              fontStyle: "italic",
+              fontStyle: "roboto",
             }}
           >
             {items.completed

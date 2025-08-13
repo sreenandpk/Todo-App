@@ -398,7 +398,7 @@ function App() {
     backgroundColor: "#f1f1f1",
     borderRadius: "10px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-    padding: "60px",
+    padding: "50px",
     textAlign: "center",
     cursor: "pointer",
     color: "red",
